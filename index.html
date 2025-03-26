@@ -9,6 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <div class="video-fallback"></div>
     <header class="header">
         <div class="nav-container">
             <ul class="nav-links">
@@ -26,8 +27,12 @@
     </header>
 
     <div class="blackhole">
-        <video autoplay muted loop playsinline src="videos/blackhole.mp4"></video>
-    </div>
+        <video autoplay muted loop playsinline disablePictureInPicture 
+               poster="videos/blackhole-poster.jpg" 
+               src="videos/blackhole.mp4">
+          <source src="videos/blackhole.webm" type="video/webm">
+        </video>
+      </div>
 
     <div class="main-content">
         <video class="galaxy-vid" autoplay muted loop playsinline src="videos/galaxy.mp4"></video>
@@ -46,8 +51,13 @@
             </div>
             
             <div class="hero-vid-box">
-                <video autoplay muted loop playsinline src="videos/hero-video.mp4"></video>
-            </div>
+                <video autoplay muted loop playsinline 
+                       poster="videos/hero-poster.jpg"
+                       src="videos/hero-video.mp4">
+                  <source src="videos/hero-video.webm" type="video/webm">
+                </video>
+                <div class="play-button-mobile">▶</div>
+              </div>
         </section>
     </div>
 </body>
