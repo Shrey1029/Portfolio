@@ -28,8 +28,8 @@
 
     <div class="blackhole">
         <video autoplay muted loop playsinline disablePictureInPicture 
-               poster="videos/blackhole-poster.jpg" 
-               src="videos/blackhole.mp4">
+            poster="videos/blackhole-poster.jpg" 
+            src="videos/blackhole.mp4">
             <source src="videos/blackhole.webm" type="video/webm">
         </video>
     </div>
@@ -49,31 +49,20 @@
                     <button class="contact-btn"><i class='bx bx-send'></i> Contact Me</button>
                 </div>
             </div>
-            
-            <div class="hero-vid-box">
-                <video autoplay muted loop playsinline 
-                       poster="videos/hero-poster.jpg"
-                       src="videos/hero-video.mp4">
-                    <source src="videos/hero-video.webm" type="video/webm">
-                </video>
-            </div>
         </section>
     </div>
 
     <section class="info-section">
-        <h1 class="section-title">Hello, There</h1>
+        <h1 class="section-title">Hello, There 👋🏻</h1>
         <div class="cards-container">
-            <!-- Profile Card -->
             <div class="card profile-card">
                 <img src="images/dp.jpg" alt="Shreyansh Singh" class="profile-image">
                 <div class="card-content">
                     <h2>Hi there, I'm Shreyansh</h2>
-                    <p>
-                        As a pre-final year student, I've built strong skills in frontend and backend development through hands-on projects. I specialize in creating dynamic, responsive websites using modern technologies, blending academic knowledge with practical implementation.</p>
+                    <p>As a pre-final year student, I've built strong skills in frontend and backend development through hands-on projects.</p>
                 </div>
             </div>
     
-            <!-- Passion Card -->
             <div class="card passion-card">
                 <div class="card-content">
                     <h2>My Passion for Coding</h2>
@@ -81,25 +70,12 @@
                 </div>
             </div>
     
-            <!-- Tech Stack Card -->
-            <div class="card tech-card">
-                <div class="card-content">
-                    <h2>Tech Stack</h2>
-                    <p>I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable applications.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">CSS3</span>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Location Card -->
             <div class="card location-card">
                 <div class="card-content">
+                    <video class="globe-video" autoplay muted loop playsinline>
+                        <source src="videos/glob.mp4" type="video/mp4">
+                        <source src="videos/glob.webm" type="video/webm">
+                    </video>
                     <h2>Location Flexible</h2>
                     <p>I'm based in Nagpur, India and open to remote work worldwide.</p>
                     <div class="location-icon">
@@ -109,5 +85,40 @@
             </div>
         </div>
     </section>
+
+    <section class="projects-section">
+        <h1 class="projects-title">My Projects</h1>
+        
+        <div class="project">
+            <div class="project-video-container" onclick="toggleFullscreen(this)">
+                <div class="video-thumbnail">
+                    <img src="images/agro-photo.jpg" alt="Project 1 Thumbnail">
+                    <div class="play-button">
+                        <i class='bx bx-play'></i>
+                    </div>
+                </div>
+                <video class="project-video-player">
+                    <source src="videos/agrolink.mp4" type="video/mp4">
+                    <source src="videos/agrolink.webm" type="video/webm">
+                </video>
+            </div>
+            <div class="project-details">
+                <h2><span class="gradient">AgroLink  - Tools for farmers and Consumers </span></h2>
+                <p class="project-description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Dicta ipsum excepturi ex in corrupti similique dolor nam,
+                    suscipit, odio soluta at recusandae nulla, id fugiat!
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Website</span>
+                    <span class="tag">Squid Game</span>
+                </div>
+            </div>
+        </div>
+        
+
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
