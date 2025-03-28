@@ -775,6 +775,10 @@ section.show {
 /* MOBILE RESPONSIVENESS */
 /* ==================== */
 
+/* ==================== */
+/* MOBILE RESPONSIVENESS */
+/* ==================== */
+
 @media screen and (max-width: 768px) {
   /* Header adjustments */
   .header {
@@ -814,7 +818,8 @@ section.show {
   
   /* Blackhole video adjustment */
   .blackhole video {
-      margin-top: -16%;
+      height: 30vh !important;
+      margin-top: 0;
   }
   
   /* Project section */
@@ -859,6 +864,22 @@ section.show {
   .autoBlur {
       animation: none;
   }
+  
+  /* Video adjustments */
+  video {
+      width: 100% !important;
+      height: auto !important;
+      object-fit: cover;
+  }
+  
+  .galaxy-vid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+  }
 }
 
 /* Smaller mobile devices */
@@ -892,7 +913,7 @@ section.show {
   }
 }
 
-/* Mobile menu toggle (add this to your HTML) */
+/* Mobile menu toggle */
 .mobile-menu-toggle {
   display: none;
 }

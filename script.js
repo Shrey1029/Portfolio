@@ -180,3 +180,29 @@ const navContainer = document.querySelector('.nav-container');
 mobileMenuToggle.addEventListener('click', () => {
     navContainer.classList.toggle('active');
 });
+
+// Add to your script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('video');
+    
+    // Try to autoplay videos
+    videos.forEach(video => {
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                // Show play button if autoplay fails
+                video.controls = true;
+                const playBtn = document.createElement('button');
+                playBtn.innerHTML = 'Play Video';
+                playBtn.classList.add('video-play-btn');
+                video.parentNode.insertBefore(playBtn, video.nextSibling);
+                
+                playBtn.addEventListener('click', () => {
+                    video.play();
+                    playBtn.remove();
+                });
+            });
+        }
+    });
+});
