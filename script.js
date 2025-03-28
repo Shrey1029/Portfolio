@@ -172,3 +172,11 @@ function setupMobileMenu() {
 
 window.addEventListener('resize', setupMobileMenu);
 setupMobileMenu();
+
+// Mobile menu toggle functionality
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navContainer = document.querySelector('.nav-container');
+
+mobileMenuToggle.addEventListener('click', () => {
+    navContainer.classList.toggle('active');
+});
