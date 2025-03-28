@@ -950,3 +950,43 @@ section.show {
       margin-top: 1rem;
   }
 }
+/* Mobile Video Fixes */
+@media screen and (max-width: 768px) {
+  /* Blackhole video fix */
+  .blackhole {
+      height: 30vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+  }
+  
+  .blackhole video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+  }
+  
+  /* Galaxy video fix */
+  .galaxy-vid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+  
+  /* Main content adjustment */
+  .main-content {
+      padding-top: 30vh; /* Match blackhole height */
+  }
+}
+.video-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

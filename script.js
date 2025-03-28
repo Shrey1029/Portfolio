@@ -181,28 +181,35 @@ mobileMenuToggle.addEventListener('click', () => {
     navContainer.classList.toggle('active');
 });
 
-// Add to your script.js
+// Background video handling only
 document.addEventListener('DOMContentLoaded', function() {
-    const videos = document.querySelectorAll('video');
+    const bgVideos = document.querySelectorAll('.blackhole video, .galaxy-vid');
     
-    // Try to autoplay videos
-    videos.forEach(video => {
-        const playPromise = video.play();
+    // Function to handle video play
+    const handleVideoPlay = (video) => {
+        video.play().catch(error => {
+            // Fallback: Show poster image if video fails
+            if(video.poster) {
+                video.style.display = 'none';
+                const fallback = document.createElement('div');
+                fallback.className = 'video-fallback';
+                fallback.style.backgroundImage = `url(${video.poster})`;
+                fallback.style.backgroundSize = 'cover';
+                fallback.style.backgroundPosition = 'center';
+                video.parentNode.appendChild(fallback);
+            }
+        });
+    };
+    
+    // Initialize background videos
+    bgVideos.forEach(video => {
+        handleVideoPlay(video);
         
-        if (playPromise !== undefined) {
-            playPromise.catch(error => {
-                // Show play button if autoplay fails
-                video.controls = true;
-                const playBtn = document.createElement('button');
-                playBtn.innerHTML = 'Play Video';
-                playBtn.classList.add('video-play-btn');
-                video.parentNode.insertBefore(playBtn, video.nextSibling);
-                
-                playBtn.addEventListener('click', () => {
-                    video.play();
-                    playBtn.remove();
-                });
-            });
-        }
+        // Retry on user interaction
+        document.addEventListener('click', () => {
+            if(video.paused) {
+                handleVideoPlay(video);
+            }
+        }, { once: true });
     });
 });
