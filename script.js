@@ -213,3 +213,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { once: true });
     });
 });
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    // Here you would typically send the data to a server
+    // For now, we'll just log it and show a success message
+    console.log('Form submitted:', { name, email, message });
+    
+    alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+    
+    // Reset the form
+    this.reset();
+});
