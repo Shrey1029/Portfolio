@@ -7,21 +7,23 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <div class="video-fallback"></div>
     <header class="header">
         <div class="nav-container">
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <ul class="social-icons">
-                <li><a href="#"><img src="images/github-logo.png" alt="GitHub"></a></li>
-                <li><a href="#"><img src="images/gmail-logo.png" alt="Email"></a></li>
-                <li><a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a></li>
+                <li><a href="https://github.com/Shrey1029" target="_blank"><img src="images/github-logo.png" alt="GitHub"></a></li>
+                <li><a href="mailto:shreysingh1029@gmail.com"><img src="images/gmail-logo.png" alt="Email"></a></li>
+                <li><a href="https://www.linkedin.com/in/shreyansh-singh-a14482329" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a></li>
             </ul>
         </div>
         <button class="mobile-menu-toggle">
@@ -31,16 +33,12 @@
 
     <div class="blackhole">
         <video autoplay muted loop playsinline webkit-playsinline 
-            poster="videos/blackhole-poster.jpg"
             src="videos/blackhole.mp4">
             Your browser does not support HTML5 video.
         </video>
     </div>
     
-    </div>
-    </div>
-
-    <div class="main-content">
+    <div id="home" class="main-content">
         <video class="galaxy-vid" autoplay muted loop playsinline src="videos/galaxy.mp4"></video>
         
         <section class="hero">
@@ -52,13 +50,13 @@
                 <h1>Developer - <span class="gradient">Creating Innovative</span> and <span class="gradient">Impactful Solutions</span></h1>
                 <p>Experienced in Android development, machine learning, and data analysis. Explore my projects and skills!</p>
                 <div class="contact-info">
-                    <button class="contact-btn"><i class='bx bx-send'></i> Contact Me</button>
+                    <a href="#contact" class="contact-btn"><i class='bx bx-send'></i> Contact Me</a>
                 </div>
             </div>
         </section>
     </div>
 
-    <section class="info-section">
+    <section id="about" class="info-section">
         <h1 class="section-title">Hello, There 👋🏻</h1>
         <div class="cards-container">
             <div class="card profile-card">
@@ -92,7 +90,7 @@
         </div>
     </section>
 
-    <section class="projects-section">
+    <section id="projects" class="projects-section">
         <h1 class="projects-title">My Projects 🧑🏼‍💻</h1>
         
         <div class="project">
@@ -170,7 +168,7 @@
                 <!-- Kotlin -->
                 <div class="skill-item" data-skill="Kotlin">
                     <div class="skill-icon">
-                        <img src="C:\Users\singh\OneDrive\Desktop\Port-Folio\images\Kotlin.png" alt="Kotlin">
+                        <img src="images/Kotlin.png" alt="Kotlin">
                     </div>
                     <div class="skill-info">
                         <h3>Kotlin</h3>
@@ -296,42 +294,12 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Duplicate first few items for infinite scroll effect -->
-                <div class="skill-item" data-skill="JavaScript">
-                    <div class="skill-icon">
-                        <img src="images/javascript.png" alt="JavaScript">
-                    </div>
-                    <div class="skill-info">
-                        <h3>JavaScript</h3>
-                        <div class="skill-level">
-                            <div class="level-bar" style="width: 50%"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-item" data-skill="Python">
-                    <div class="skill-icon">
-                        <img src="images/python.png" alt="Python">
-                    </div>
-                    <div class="skill-info">
-                        <h3>Python</h3>
-                        <div class="skill-level">
-                            <div class="level-bar" style="width: 65%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="skill-description-container">
-            <div class="skill-description">
-                <h3>Hover or tap on a skill to see details</h3>
-                <p>I've mastered these technologies through various projects and professional experience</p>
             </div>
         </div>
     </section>
-    <section class="contact-section">
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
         <div class="contact-container">
             <h1 class="contact-title">Let's talk 😊</h1>
             
@@ -351,15 +319,15 @@
             </div>
             
             <div class="contact-form">
-                <form id="contactForm" action="#" method="POST">
+                <form id="contactForm">
                     <div class="form-group">
                         <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
+                        <input type="text" id="fullName" name="from_name" placeholder="Your Full Name" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <input type="email" id="email" name="from_email" placeholder="Your Email" required>
                     </div>
                     
                     <div class="form-group">
@@ -374,6 +342,8 @@
             </div>
         </div>
     </section>
+
     <script src="script.js"></script>
 </body>
 </html>
+    
