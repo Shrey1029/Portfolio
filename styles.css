@@ -44,7 +44,7 @@ body {
   z-index: 100;
   box-shadow: 0 0 15px rgba(114, 161, 222, 0.4);
   backdrop-filter: blur(10px);
-  mix-blend-mode: screen;
+  mix-blend-mode: normal;
 }
 
 .nav-container {
